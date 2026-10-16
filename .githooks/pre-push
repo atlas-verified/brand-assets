@@ -1,0 +1,30 @@
+#!/bin/sh
+# atlas-agent-provenance/v1
+# schema: atlas-agent-provenance/v1
+# change_id: 11860d05-bd29-41a4-a87d-38897b521b36
+# timestamp: 2026-10-16T04:05:48.309563Z
+# file: .githooks/pre-push
+# change_kind: create
+# base_commit: b37d1b7193ecacf8f12350178ab5b1fe31ce98e2
+# hunks: -0,0:+1,30
+# coder_runtime: codex-desktop
+# coder_model: Codex (GPT-6)
+# coder_model_id: not_exposed
+# coder_reasoning: not_exposed
+# coder_max_mode: not_exposed
+# coder_mode: agent
+# coder_context_window: not_exposed
+# plan_id: atlas-dev-pr-routing
+# plan_path: dev-workflow/PR-TARGET-POLICY.md
+# plan_revision: 7ad024450572908b34c55d77c7e1a7f07be592c3dd399672fd5e9942d1627192
+# planner_model: Codex (GPT-6)
+# planner_model_id: not_exposed
+# planner_reasoning: not_exposed
+# planner_max_mode: not_exposed
+# planner_context_window: not_exposed
+# fixes_change_ids: none
+
+set -eu
+root=$(git rev-parse --show-toplevel)
+cd "$root"
+exec node scripts/pr-target-pre-push.cjs "$@"
